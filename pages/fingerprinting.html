@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="硬體特徵與裝置指紋｜Device Trust Lab"><title>硬體特徵與裝置指紋｜Device Trust Lab</title><link rel="stylesheet" href="../assets/css/style.css"><script src="../assets/js/app.js" defer></script></head>
+<body>
+<header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><button class="menu-toggle" aria-label="切換導覽選單" aria-expanded="false">☰</button><nav class="main-nav" aria-label="主要導覽"><a class="" href="../index.html">首頁</a><a class="" href="architecture.html">系統架構</a><a class="active" href="fingerprinting.html">硬體特徵</a><a class="" href="zero-trust.html">Zero Trust</a><a class="" href="risk-lab.html">互動實驗室</a></nav></header>
+<main><section class="page-hero"><div class="breadcrumb"><a href="../index.html">首頁</a> / 硬體特徵與裝置指紋</div><p class="eyebrow">MODULE 02 / HARDWARE SIGNALS</p><h1>硬體特徵與裝置指紋</h1><p class="lead">硬體特徵能協助辨識裝置狀態，但每一項訊號都有穩定性、隱私與偽裝上的限制。</p></section>
+<section class="page-content"><article class="article"><h2 id="concept">什麼是裝置指紋？</h2>
+<p>裝置指紋（Device Fingerprint）是由多個裝置屬性組合而成的識別線索。它不一定是唯一且永久不變的 ID，而是用來協助系統比較「目前觀察到的裝置」與「先前登錄的裝置」是否相符。</p>
+<h2 id="workflow">常見硬體訊號</h2>
+<table class="data-table"><thead><tr><th>訊號</th><th>可能用途</th><th>注意事項</th></tr></thead><tbody><tr><td>CPU 型號／架構</td><td>協助辨識處理器平台</td><td>虛擬機可能呈現抽象化資訊</td></tr><tr><td>RAM 容量</td><td>比較記憶體配置</td><td>擴充記憶體後可能改變</td></tr><tr><td>儲存裝置摘要</td><td>比較磁碟類型或容量</td><td>更換硬碟、分割或外接裝置會影響結果</td></tr><tr><td>網路介面摘要</td><td>觀察網卡或介面配置</td><td>MAC 位址可能隨機化，也可能有多張介面卡</td></tr></tbody></table>
+<h3>為什麼不該只依賴單一欄位？</h3><p>單一欄位通常不足以證明裝置身分。例如 RAM 容量相同的裝置非常多；網路介面資訊也可能因環境或設定而變動。多項訊號可以降低單點判斷的風險，但仍無法保證絕對唯一性。</p>
+<h2 id="limitations">蒐集原則與限制</h2>
+<ul><li><strong>資料最小化：</strong>只蒐集與研究目的直接相關的欄位。</li><li><strong>明確告知：</strong>說明蒐集目的、保存期限與使用方式。</li><li><strong>避免硬編碼信任：</strong>不要把某個硬體欄位當成不可偽造的憑證。</li><li><strong>處理變更：</strong>設計裝置升級、維修與重新註冊的流程。</li></ul>
+<div class="callout warning">研究提醒：硬體特徵可能被模擬、隱藏或修改。裝置指紋應被視為輔助風險訊號，而不是密碼學身分憑證。</div>
+<h2>從特徵到基準線</h2><p>基準線（Baseline）是裝置在受控註冊階段所記錄的參考狀態。實務上應記錄欄位來源、時間、版本與更新原因，並保留變更歷史，才能解釋比對結果。</p></article><aside class="side-note"><h3>IN THIS MODULE</h3><a href="#concept">核心概念</a><a href="#workflow">運作方式</a><a href="#limitations">限制與注意事項</a><a href="../pages/risk-lab.html">前往互動實驗室 ↗</a></aside></section></main>
+<footer class="site-footer"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><p>Learning project · Hardware signals × Zero Trust</p><span>© 2026 Device Trust Lab</span></footer>
+</body></html>

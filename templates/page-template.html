@@ -1,0 +1,60 @@
+<!--
+新增知識頁面時：
+1. 複製此檔到 pages/<topic-name>.html
+2. 將 CSS/JS 路徑維持為 ../assets/...
+3. 保留共用 header、nav、page-hero、page-content、footer 結構
+4. 更新 index.html 卡片與 AGENTS.md 資訊架構表
+-->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="請填入本頁摘要。">
+  <title>頁面標題｜Device Trust Lab</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a>
+    <button class="menu-toggle" aria-label="切換導覽選單" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="主要導覽">
+      <a href="../index.html">首頁</a>
+      <a href="architecture.html">系統架構</a>
+      <a href="fingerprinting.html">硬體特徵</a>
+      <a href="zero-trust.html">Zero Trust</a>
+      <a href="risk-lab.html">互動實驗室</a>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="breadcrumb"><a href="../index.html">首頁</a> / 頁面標題</div>
+      <p class="eyebrow">MODULE XX / CATEGORY</p>
+      <h1>頁面標題</h1>
+      <p class="lead">用一至兩句話說明本頁目的與讀者可以學到什麼。</p>
+    </section>
+    <section class="page-content">
+      <article class="article">
+        <h2 id="concept">核心概念</h2>
+        <p>先說明定義，再說明為什麼重要。</p>
+        <h2 id="workflow">運作方式</h2>
+        <p>使用步驟、表格或例子說明。</p>
+        <h2 id="limitations">限制與注意事項</h2>
+        <p>說明適用範圍、限制與可能誤解。</p>
+      </article>
+      <aside class="side-note">
+        <h3>IN THIS MODULE</h3>
+        <a href="#concept">核心概念</a>
+        <a href="#workflow">運作方式</a>
+        <a href="#limitations">限制與注意事項</a>
+      </aside>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a>
+    <p>Learning project · Hardware signals × Zero Trust</p>
+    <span>© 2026 Device Trust Lab</span>
+  </footer>
+</body>
+</html>

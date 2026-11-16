@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Zero Trust 原則｜Device Trust Lab"><title>Zero Trust 原則｜Device Trust Lab</title><link rel="stylesheet" href="../assets/css/style.css"><script src="../assets/js/app.js" defer></script></head>
+<body>
+<header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><button class="menu-toggle" aria-label="切換導覽選單" aria-expanded="false">☰</button><nav class="main-nav" aria-label="主要導覽"><a class="" href="../index.html">首頁</a><a class="" href="architecture.html">系統架構</a><a class="" href="fingerprinting.html">硬體特徵</a><a class="active" href="zero-trust.html">Zero Trust</a><a class="" href="risk-lab.html">互動實驗室</a></nav></header>
+<main><section class="page-hero"><div class="breadcrumb"><a href="../index.html">首頁</a> / Zero Trust 原則</div><p class="eyebrow">MODULE 03 / ZERO TRUST</p><h1>Zero Trust 原則</h1><p class="lead">Zero Trust 並不是「誰都不能相信」，而是不要因為裝置位於內部網路，就預設它永遠可信。</p></section>
+<section class="page-content"><article class="article"><h2 id="concept">核心概念：Never Trust, Always Verify</h2>
+<p>Zero Trust（零信任）是一種資安架構思維：每次存取都應根據明確的身分、裝置狀態、資源敏感度與情境進行驗證，而不是只因為請求來自內部網路就自動放行。</p>
+<h2 id="workflow">三個常見設計原則</h2>
+<h3>1. 持續驗證（Continuous Verification）</h3><p>驗證不只發生在登入瞬間。當裝置狀態、使用者行為、位置或風險條件改變時，系統可以重新評估存取要求。</p>
+<h3>2. 最小權限（Least Privilege）</h3><p>使用者與裝置只取得完成工作所需的最低權限，並盡可能限制權限範圍與有效時間。</p>
+<h3>3. 假設可能遭到入侵（Assume Breach）</h3><p>架構設計應假設某個帳號、裝置或網段可能已遭到入侵，因此需要分區、監控、稽核與限制橫向移動。</p>
+<div class="callout">裝置硬體特徵可以成為「裝置狀態」的一部分，但 Zero Trust 還需要使用者身分、工作階段、資源敏感度與政策引擎共同參與。</div>
+<h2 id="limitations">硬體偵測在 Zero Trust 中的位置</h2>
+<p>硬體訊號的角色是提供額外的裝置風險資訊。它不應取代 MFA、憑證、端點安全狀態或存取政策。當硬體訊號異常時，較合理的做法可能是要求額外驗證、降低權限或隔離檢查，而非直接將裝置定性為惡意。</p>
+<h2>一個簡化決策例子</h2>
+<table class="data-table"><thead><tr><th>情境</th><th>可能處置</th></tr></thead><tbody><tr><td>身分驗證成功、裝置訊號一致、資源一般</td><td>依政策提供必要權限</td></tr><tr><td>身分驗證成功、部分硬體訊號變更</td><td>要求重新驗證或檢查裝置變更紀錄</td></tr><tr><td>裝置風險高且存取敏感資源</td><td>限制存取並啟動調查流程</td></tr></tbody></table>
+<p>以上是概念示例；實際處置必須依組織政策、風險承受度與驗證機制設計。</p></article><aside class="side-note"><h3>IN THIS MODULE</h3><a href="#concept">核心概念</a><a href="#workflow">運作方式</a><a href="#limitations">限制與注意事項</a><a href="../pages/risk-lab.html">前往互動實驗室 ↗</a></aside></section></main>
+<footer class="site-footer"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><p>Learning project · Hardware signals × Zero Trust</p><span>© 2026 Device Trust Lab</span></footer>
+</body></html>

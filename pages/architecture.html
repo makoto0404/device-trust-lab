@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="裝置信任架構｜Device Trust Lab"><title>裝置信任架構｜Device Trust Lab</title><link rel="stylesheet" href="../assets/css/style.css"><script src="../assets/js/app.js" defer></script></head>
+<body>
+<header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><button class="menu-toggle" aria-label="切換導覽選單" aria-expanded="false">☰</button><nav class="main-nav" aria-label="主要導覽"><a class="" href="../index.html">首頁</a><a class="active" href="architecture.html">系統架構</a><a class="" href="fingerprinting.html">硬體特徵</a><a class="" href="zero-trust.html">Zero Trust</a><a class="" href="risk-lab.html">互動實驗室</a></nav></header>
+<main><section class="page-hero"><div class="breadcrumb"><a href="../index.html">首頁</a> / 裝置信任架構</div><p class="eyebrow">MODULE 01 / ARCHITECTURE</p><h1>裝置信任架構</h1><p class="lead">把裝置端蒐集、伺服器端比對與決策流程拆開，才能清楚理解每個元件的責任。</p></section>
+<section class="page-content"><article class="article"><h2 id="concept">核心概念：分離蒐集、比對與決策</h2>
+<p>裝置信任系統可以拆成三個主要角色：<strong>Client（用戶端）</strong>負責蒐集必要的裝置資訊；<strong>Server（伺服器端）</strong>保存已登錄裝置的基準資料；<strong>Decision Engine（決策引擎）</strong>根據比對結果與其他情境訊號，決定下一步處置。</p>
+<div class="diagram"><div><b>CLIENT</b><span>Collect signals</span></div><div><b>SERVER</b><span>Baseline storage</span></div><div><b>DECISION</b><span>Evaluate & respond</span></div></div>
+<h2 id="workflow">運作方式：四個階段</h2>
+<ol><li><strong>裝置註冊：</strong>在受控流程中建立裝置基準資料，並記錄註冊時間與版本。</li><li><strong>訊號蒐集：</strong>用戶端蒐集必要欄位，例如 CPU 型號、記憶體容量、儲存裝置資訊與網路介面摘要。</li><li><strong>基準比對：</strong>伺服器將本次訊號與登錄資料比較，產生一致、不一致或未知的結果。</li><li><strong>風險決策：</strong>決策引擎結合比對結果、使用者身分、存取資源與環境條件，選擇允許、限制或要求額外驗證。</li></ol>
+<div class="callout">重要設計觀念：硬體資訊是風險訊號之一，不是完整身分驗證。裝置符合基準，也不代表使用者身分或當下工作階段必然可信。</div>
+<h2 id="limitations">限制與注意事項</h2>
+<p>硬體欄位可能因維修、升級、虛擬化或作業系統更新而改變。系統應提供基準更新與裝置重新註冊的受控流程，避免把合法變更一律判定為攻擊。</p>
+<table class="data-table"><thead><tr><th>元件</th><th>責任</th><th>應避免的設計</th></tr></thead><tbody><tr><td>Client</td><td>蒐集最少必要訊號</td><td>蒐集與目的無關的個資</td></tr><tr><td>Server</td><td>保存版本化基準與紀錄</td><td>無驗證地覆寫基準</td></tr><tr><td>Decision Engine</td><td>彙整訊號並採取分級處置</td><td>只依單一欄位做絕對判斷</td></tr></tbody></table>
+<h2>設計時可以問的問題</h2><ul><li>哪些欄位真的有助於判斷？</li><li>欄位變更時，如何區分合法升級與異常狀況？</li><li>誰可以更新基準？更新是否留下稽核紀錄？</li><li>分數落在灰色區間時，是否有額外驗證或人工覆核？</li></ul></article><aside class="side-note"><h3>IN THIS MODULE</h3><a href="#concept">核心概念</a><a href="#workflow">運作方式</a><a href="#limitations">限制與注意事項</a><a href="../pages/risk-lab.html">前往互動實驗室 ↗</a></aside></section></main>
+<footer class="site-footer"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><p>Learning project · Hardware signals × Zero Trust</p><span>© 2026 Device Trust Lab</span></footer>
+</body></html>

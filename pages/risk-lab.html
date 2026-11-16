@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="風險評分實驗室｜Device Trust Lab"><title>風險評分實驗室｜Device Trust Lab</title><link rel="stylesheet" href="../assets/css/style.css"><script src="../assets/js/app.js" defer></script></head>
+<body>
+<header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><button class="menu-toggle" aria-label="切換導覽選單" aria-expanded="false">☰</button><nav class="main-nav" aria-label="主要導覽"><a class="" href="../index.html">首頁</a><a class="" href="architecture.html">系統架構</a><a class="" href="fingerprinting.html">硬體特徵</a><a class="" href="zero-trust.html">Zero Trust</a><a class="active" href="risk-lab.html">互動實驗室</a></nav></header>
+<main><section class="page-hero"><div class="breadcrumb"><a href="../index.html">首頁</a> / 風險評分實驗室</div><p class="eyebrow">MODULE 04 / INTERACTIVE LAB</p><h1>風險評分實驗室</h1><p class="lead">動手調整裝置訊號，觀察簡化的加減分規則如何產生不同的風險提示。</p></section>
+<section class="page-content"><article class="article"><h2 id="concept">實驗目的</h2>
+<p>這個互動頁用簡化的分數示範多項訊號如何共同影響判斷。請切換下方選項，觀察總分與提示文字的變化。</p>
+<div class="lab-panel"><div class="lab-grid"><div>
+<div class="control-row"><label for="cpu-signal">CPU 型號 <output>+5 / -10</output></label><select id="cpu-signal" data-signal data-name="CPU 型號"><option value="5">符合已登錄基準（+5）</option><option value="-10">與基準不同（-10）</option></select></div>
+<div class="control-row"><label for="ram-signal">RAM 容量 <output>+5 / -3</output></label><select id="ram-signal" data-signal data-name="RAM 容量"><option value="5">符合已登錄基準（+5）</option><option value="-3">與基準不同（-3）</option></select></div>
+<div class="control-row"><label for="storage-signal">儲存裝置 <output>+5 / -3</output></label><select id="storage-signal" data-signal data-name="儲存裝置"><option value="5">符合已登錄基準（+5）</option><option value="-3">與基準不同（-3）</option></select></div>
+<div class="control-row"><label for="network-signal">網路介面摘要 <output>+5 / -2</output></label><select id="network-signal" data-signal data-name="網路介面"><option value="5">符合已登錄基準（+5）</option><option value="-2">與基準不同（-2）</option></select></div>
+<button class="reset-button" id="reset-lab" type="button">重設所有訊號</button>
+</div><div class="result-panel"><span class="eyebrow">DEMO SCORE</span><div class="score" id="score-value">+20</div><div class="score-bar"><span id="score-bar-fill"></span></div><strong class="result-label" id="risk-label">低風險示例：訊號大致一致</strong><p class="result-detail" id="risk-detail" aria-live="polite">目前輸入的示範訊號多數符合基準。</p></div></div></div>
+<h2 id="workflow">評分規則（教學用）</h2>
+<table class="data-table"><thead><tr><th>訊號</th><th>符合基準</th><th>不符合基準</th></tr></thead><tbody><tr><td>CPU 型號</td><td>+5</td><td>-10</td></tr><tr><td>RAM 容量</td><td>+5</td><td>-3</td></tr><tr><td>儲存裝置</td><td>+5</td><td>-3</td></tr><tr><td>網路介面摘要</td><td>+5</td><td>-2</td></tr></tbody></table>
+<p>本頁將總分 8 分以上顯示為「低風險示例」、0 至 7 分顯示為「中度注意」、低於 0 分顯示為「較高風險示例」。這些權重與門檻只是為了展示規則引擎概念，並非業界標準。</p>
+<h2 id="limitations">重要限制：分數不是事實</h2>
+<ul><li>硬體差異可能來自合法升級、維修或環境變動。</li><li>特徵一致不代表裝置一定安全，也不能證明使用者身分。</li><li>真實系統需要使用測試資料校準權重，量測誤判率與漏判率。</li><li>決策應保留額外驗證、人工覆核與稽核紀錄的空間。</li></ul>
+<div class="callout warning">請勿將本示範公式直接用於真實網路存取控制。這是一個前端互動教具，不會連接任何裝置或伺服器，也不會蒐集資料。</div></article><aside class="side-note"><h3>IN THIS MODULE</h3><a href="#concept">核心概念</a><a href="#workflow">運作方式</a><a href="#limitations">限制與注意事項</a><a href="../pages/risk-lab.html">前往互動實驗室 ↗</a></aside></section></main>
+<footer class="site-footer"><a class="brand" href="../index.html"><span class="brand-mark">DT</span><span>DEVICE TRUST <small>LAB / KNOWLEDGE BASE</small></span></a><p>Learning project · Hardware signals × Zero Trust</p><span>© 2026 Device Trust Lab</span></footer>
+</body></html>
